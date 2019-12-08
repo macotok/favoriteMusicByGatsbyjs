@@ -3,9 +3,6 @@ import { graphql, StaticQuery, Link } from 'gatsby';
 import styled from 'styled-components';
 import LinkAnimation from '../../styled/Common';
 
-const Nav = styled.nav`
-`;
-
 const NavList = styled.ul`
   display: flex;
 `;
@@ -32,24 +29,24 @@ const HeaderNav = () => (
           node{
             items{
               title
-              object_slug
+              url
             }
           }
         }
       }
     }
   `} render={props => (
-      <Nav>
+      <nav>
         <NavList>
           {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
             <NavItem>
-              <ManuItem to={`/${item.object_slug}`} key={item.title}>
+              <ManuItem to={item.url} key={item.title}>
                 {item.title}
               </ManuItem>
             </NavItem>
           ))};
         </NavList>
-      </Nav>
+      </nav>
   )} />
 );
 
