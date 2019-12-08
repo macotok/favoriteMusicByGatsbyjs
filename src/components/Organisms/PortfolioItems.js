@@ -14,25 +14,15 @@ const PortfolioItemm = styled.div`
   padding: 16px;
 `;
 
-const PortfolioImage = styled.img`
-  max-width: 100%;
-`;
-
-
 const PortfolioItems = () => (
   <StaticQuery query={graphql`
     {
-      allWordpressWpPortfolio{
+      allWordpressWpKeymusician{
         edges{
           node{
             id
             title
-            slug
-            excerpt
             content
-            featured_media{
-              source_url
-            }
           }
         }
       }
@@ -41,8 +31,7 @@ const PortfolioItems = () => (
         {props.allWordpressWpPortfolio.edges.map(portfolioItem => (
           <PortfolioItemm key={portfolioItem.node.id}>
             <h3>{portfolioItem.node.title}</h3>
-            <PortfolioImage src={portfolioItem.node.featured_media.source_url} alt="thumbnail" />
-            <div dangerouslySetInnerHTML={{ __html: portfolioItem.node.excerpt}} />
+            <div dangerouslySetInnerHTML={{ __html: portfolioItem.node.content}} />
             <Link to={`/portfolio/${portfolioItem.node.slug}`}>
               Read more
             </Link>

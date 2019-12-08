@@ -11,7 +11,6 @@ const slash = require(`slash`)
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
-  createRedirect({ fromPath: '/', toPath: '/home', redirectInBrowser: true, isPermanent: true });
   return new Promise((resolve, reject) => {
     // The “graphql” function allows us to run arbitrary
     // queries against the local WordPress graphql schema. Think of
@@ -31,7 +30,6 @@ exports.createPages = ({ graphql, actions }) => {
                 template
                 title
                 content
-                template
               }
             }
           }
@@ -60,32 +58,24 @@ exports.createPages = ({ graphql, actions }) => {
             // optional but is often necessary so the template
             // can query data specific to each page.
             path: `/${edge.node.slug}/`,
-            component: slash(edge.node.template === 'portfolio_under_content.php' ? portfolioUnderContentTemplate : pageTemplate),
+            component: slash(edge.node.template === 'history_under_content.php' ? portfolioUnderContentTemplate : pageTemplate),
             context: edge.node,
           })
         })
       })
       // ==== END PAGES ====
 
-      // ==== PORTFOLIO ====
+      // ==== keyMusician ====
       .then(() => {
         graphql(
           `
             {
-              allWordpressWpPortfolio{
+              allWordpressWpKeymusician{
                 edges{
                   node{
                     id
                     title
-                    slug
-                    excerpt
                     content
-                    featured_media{
-                      source_url
-                    }
-                    acf{
-                      portfolio_url
-                    }
                   }
                 }
               }
@@ -96,13 +86,13 @@ exports.createPages = ({ graphql, actions }) => {
             console.log(result.errors)
             reject(result.errors)
           }
-          const portfolioTemplate = path.resolve("./src/templates/portfolio.js")
+          const portfolioTemplate = path.resolve("./src/templates/keyMusician.js")
           // We want to create a detailed page for each
           // post node. We'll just use the WordPress Slug for the slug.
           // The Post ID is prefixed with 'POST_'
-          _.each(result.data.allWordpressWpPortfolio.edges, edge => {
+          _.each(result.data.allWordpressWpKeymusician.edges, edge => {
             createPage({
-              path: `/portfolio/${edge.node.slug}/`,
+              path: `/keyMusician/${edge.node.slug}/`,
               component: slash(portfolioTemplate),
               context: edge.node,
             })
@@ -110,7 +100,7 @@ exports.createPages = ({ graphql, actions }) => {
           resolve()
         })
       })
-    // ==== END PORTFOLIO ====
+    // ==== END Keymusician ====
     // ==== BLOG POST ====
       .then(() => {
         graphql(`
