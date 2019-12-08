@@ -1,15 +1,16 @@
 import React from 'react';
 import Layout from '../components/Layout/Layout';
 import { Link } from 'gatsby';
+import Text from '../components/Atoms/Text';
 import topText from '../text/top';
 
 const Home = () => (
   <Layout>
     <main>
-      <p>
+      <Text>
         ぷこおの勝手な音楽評論のサイトです。<br />
         これまでどういう音楽を聴いてきたか。どういう音楽が好きかを綴るサイトです。
-      </p>
+      </Text>
       {
         topText.map(list => (
           <div>
@@ -19,9 +20,9 @@ const Home = () => (
           </div>
         ))
       }
-      <p>
+      <Text>
         このサイトはHeadlessCMS(WordPress)とGatsby.js(React)で制作しています。
-      </p>
+      </Text>
     </main>
   </Layout>
 );

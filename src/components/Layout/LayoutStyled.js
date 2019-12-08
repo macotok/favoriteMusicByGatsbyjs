@@ -25,13 +25,13 @@ const LayoutStyled = createGlobalStyle`
     padding:0;
     border:0;
     outline:0;
-    font-size:100%;
+    font-size:16px;
     vertical-align:baseline;
     background:transparent;
   }
   
   body {
-    line-height:1;
+    line-height:1.4;
   }
   
   article,aside,details,figcaption,figure,
