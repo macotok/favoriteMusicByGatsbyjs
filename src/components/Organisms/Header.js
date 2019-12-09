@@ -8,7 +8,7 @@ const HeaderWrapper = styled.header`
   align-items: center;
   background-color: ${props => props.theme.palette.primary.main};
   padding: 1rem 0;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 `;
 
 const HeaderInner = styled.div`

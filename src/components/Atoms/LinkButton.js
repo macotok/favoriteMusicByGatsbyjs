@@ -7,6 +7,7 @@ import styled from 'styled-components';
 const ButtonWrap = styled.div`
   display: flex;
   justify-content: flex-end;
+  margin-bottom: 2rem;
 `;
 
 const LinkText = styled(Link)`
