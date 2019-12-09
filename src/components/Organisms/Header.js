@@ -6,7 +6,7 @@ import HeaderNav from '../Molecules/List/HeaderNav';
 const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
-  background-color: #3B3B58;
+  background-color: ${props => props.theme.palette.primary.main};
   padding: 1rem 0;
 `;
 
