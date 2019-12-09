@@ -38,8 +38,8 @@ const HeaderNav = () => (
   `} render={props => (
       <nav>
         <NavList>
-          {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
-            <NavItem>
+          {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, index) => (
+            <NavItem key={index}>
               <ManuItem to={item.url} key={item.title}>
                 {item.title}
               </ManuItem>

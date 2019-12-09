@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/Layout/Layout';
-import { Link } from 'gatsby';
 import Text from '../components/Atoms/Text';
 import topText from '../text/top';
+import BlockList from '../components/Molecules/List/BlockList';
 
 const Home = () => (
   <Layout>
@@ -12,12 +12,8 @@ const Home = () => (
         これまでどういう音楽を聴いてきたか。どういう音楽が好きかを綴るサイトです。
       </Text>
       {
-        topText.map(list => (
-          <div>
-            <h2>{list.title}</h2>
-            <p>{list.content}</p>
-            <Link to={list.link}>to Page</Link>
-          </div>
+        topText.map((list, index) => (
+          <BlockList list={list} key={index} />
         ))
       }
       <Text>
