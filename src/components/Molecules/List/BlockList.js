@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import { Link } from 'gatsby';
 import TitleH2 from '../../Atoms/TitleH2';
+import LinkButton from '../../Atoms/LinkButton';
 
 const BlockList = ({ list }) => (
   <div>
@@ -13,14 +12,14 @@ const BlockList = ({ list }) => (
     <Typography variant="body1" gutterBottom>
       {list.content}
     </Typography>
-    <Button variant="contained" color="secondary">
-      <Link to={list.link}>to Page</Link>
-    </Button>
+    <LinkButton toLink={list.link}>
+      {`${list.title}のページ`}
+    </LinkButton>
   </div>
 );
 
 BlockList.propTypes = {
   list: PropTypes.shape({}).isRequired,
-}
+};
 
 export default BlockList;
