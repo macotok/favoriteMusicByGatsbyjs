@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.7.2",
+    "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.7.1",
     "babel-plugin-styled-components": "^1.10.6",
     "bluebird": "^3.7.1",
