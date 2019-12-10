@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
+import MusicNoteOutlinedIcon from '@material-ui/icons/MusicNoteOutlined';
 
 const SiteInfoWrapper = styled.div`
   flex-grow: 1;
@@ -35,6 +36,7 @@ const SiteInfo = () => (
     <SiteInfoWrapper>
       <SiteTitle>
         {props.allWordpressSiteMetadata.edges[0].node.name}
+        <MusicNoteOutlinedIcon style={{ position: 'relative', top: 5 }}/>
       </SiteTitle>
       <SiteDescription>
         {props.allWordpressSiteMetadata.edges[0].node.description}
