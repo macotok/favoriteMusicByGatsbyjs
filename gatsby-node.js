@@ -44,7 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         // Create Page pages.
         const pageTemplate = path.resolve("./src/templates/page.js");
-        const portfolioUnderContentTemplate = path.resolve("./src/templates/portfolioUnderContent.js");
+        const historyUnderContentTemplate = path.resolve("./src/templates/historyUnderContent.js");
         // We want to create a detailed page for each
         // page node. We'll just use the WordPress Slug for the slug.
         // The Page ID is prefixed with 'PAGE_'
@@ -58,7 +58,7 @@ exports.createPages = ({ graphql, actions }) => {
             // optional but is often necessary so the template
             // can query data specific to each page.
             path: `/${edge.node.slug}/`,
-            component: slash(edge.node.template === 'history_under_content.php' ? portfolioUnderContentTemplate : pageTemplate),
+            component: slash(edge.node.template === 'history_under_content.php' ? historyUnderContentTemplate : pageTemplate),
             context: edge.node,
           })
         })

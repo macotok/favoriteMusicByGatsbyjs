@@ -1,6 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql, Link } from 'gatsby';
 import styled from 'styled-components';
+import keyMusician from '../../templates/keyMusician';
 
 const PortfolioItemsWrapper = styled.div`
   display: flex;
@@ -28,13 +29,10 @@ const PortfolioItems = () => (
       }
     }`} render={props => (
       <PortfolioItemsWrapper>
-        {props.allWordpressWpPortfolio.edges.map(portfolioItem => (
-          <PortfolioItemm key={portfolioItem.node.id}>
-            <h3>{portfolioItem.node.title}</h3>
-            <div dangerouslySetInnerHTML={{ __html: portfolioItem.node.content}} />
-            <Link to={`/portfolio/${portfolioItem.node.slug}`}>
-              Read more
-            </Link>
+        {props.allWordpressWpKeymusician.edges.map(keyMusicianItem => (
+          <PortfolioItemm key={keyMusicianItem.node.id}>
+            <h3>{keyMusicianItem.node.title}</h3>
+            <div dangerouslySetInnerHTML={{ __html: keyMusicianItem.node.content}} />
           </PortfolioItemm>
         ))}
       </PortfolioItemsWrapper>
