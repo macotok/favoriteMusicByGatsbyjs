@@ -13,12 +13,9 @@ const Home = () => (
       </Text>
       {
         topText.map((list, index) => (
-          <BlockList list={list} key={index} />
+          <BlockList list={list} isLastChild={topText.length === (index + 1)} key={index} />
         ))
       }
-      <Text>
-        このサイトはHeadlessCMS(WordPress)とGatsby.js(React)で制作しています。
-      </Text>
     </main>
   </Layout>
 );

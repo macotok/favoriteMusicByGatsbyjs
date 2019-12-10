@@ -10,7 +10,7 @@ const BlockListWrap = styled.div`
   margin-bottom: 2rem;
 `
 
-const BlockList = ({ list }) => (
+const BlockList = ({ list, isLastChild }) => (
   <BlockListWrap>
     <TitleH2>
       {list.title}
@@ -21,12 +21,17 @@ const BlockList = ({ list }) => (
     <LinkButton toLink={list.link}>
       {`${list.title}のページ`}
     </LinkButton>
-    <Divider component="div" />
+    {isLastChild ? null : (<Divider variant="middle" component="div" />)}
   </BlockListWrap>
 );
 
 BlockList.propTypes = {
   list: PropTypes.shape({}).isRequired,
+  isLastChild: PropTypes.bool,
 };
+
+BlockList.defaultProps = {
+  isLastChild: false,
+}
 
 export default BlockList;
