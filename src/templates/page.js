@@ -1,10 +1,12 @@
 import React from 'react';
+import Typography from '@material-ui/core/Typography';
+import TitleH2 from '../components/Atoms/TitleH2';
 import Layout from '../components/Layout/Layout';
 
 export default ({ pageContext }) => (
   <Layout>
-    <h1 dangerouslySetInnerHTML={{ __html: pageContext.title}} />
-    <div dangerouslySetInnerHTML={{ __html: pageContext.content }} />
+    <TitleH2 dangerouslySetInnerHTML={{ __html: pageContext.title}} />
+    <Typography dangerouslySetInnerHTML={{ __html: pageContext.content }} />
   </Layout>
 )
 
