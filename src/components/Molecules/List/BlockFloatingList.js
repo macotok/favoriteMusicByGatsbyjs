@@ -1,21 +1,21 @@
 import React from 'react';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import keyMusician from '../../templates/keyMusician';
+import TitleH4 from '../../Atoms/TitleH4';
 
-const PortfolioItemsWrapper = styled.div`
+const BlockListWrap = styled.div`
   display: flex;
   justify-content: center;
 `;
 
-const PortfolioItemm = styled.div`
+const BlockListItem = styled.div`
   width: 300px;
   border: 1px solid #efefef;
   margin: 16px;
   padding: 16px;
 `;
 
-const PortfolioItems = () => (
+const BlockFloatingList = () => (
   <StaticQuery query={graphql`
     {
       allWordpressWpKeymusician{
@@ -28,16 +28,18 @@ const PortfolioItems = () => (
         }
       }
     }`} render={props => (
-      <PortfolioItemsWrapper>
+      <BlockListWrap>
         {props.allWordpressWpKeymusician.edges.map(keyMusicianItem => (
-          <PortfolioItemm key={keyMusicianItem.node.id}>
-            <h3>{keyMusicianItem.node.title}</h3>
+          <BlockListItem key={keyMusicianItem.node.id}>
+            <TitleH4>
+              {keyMusicianItem.node.title}
+            </TitleH4>
             <div dangerouslySetInnerHTML={{ __html: keyMusicianItem.node.content}} />
-          </PortfolioItemm>
+          </BlockListItem>
         ))}
-      </PortfolioItemsWrapper>
+      </BlockListWrap>
     )}
   />
 );
 
-export default PortfolioItems;
+export default BlockFloatingList;

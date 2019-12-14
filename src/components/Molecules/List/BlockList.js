@@ -16,15 +16,12 @@ const LinkText = styled(Link)`
   text-decoration: none;
 `
 
-
 const BlockList = ({ list, isLastChild }) => (
   <BlockListWrap>
     <TitleH2>
       {list.title}
     </TitleH2>
-    <Typography variant="body1" gutterBottom>
-      {list.content}
-    </Typography>
+    <Typography variant="body1" gutterBottom dangerouslySetInnerHTML={{__html: list.content}} />
     <ButtonPrimary>
       <LinkText to={list.link}>
         {list.linkText}

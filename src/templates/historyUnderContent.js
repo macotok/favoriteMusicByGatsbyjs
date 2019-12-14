@@ -1,10 +1,11 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
+import { Divider, Typography } from '@material-ui/core';
+import FaceIcon from '@material-ui/icons/Face';
 import Layout from '../components/Layout/Layout';
 import TitleH2 from '../components/Atoms/TitleH2';
+import TitleH3 from '../components/Atoms/TitleH3';
 import ArticleText from '../components/Atoms/ArticleText';
-import PortfolioItems from '../components/Organisms/PortfolioItems';
-
+import BlockFloatingList from '../components/Molecules/List/BlockFloatingList';
 
 export default ({ pageContext }) => (
   <Layout>
@@ -14,7 +15,11 @@ export default ({ pageContext }) => (
     <Typography component="div" variant="body1" gutterBottom>
       <ArticleText text={pageContext.content} />
     </Typography>
-    <PortfolioItems />
+    <Divider variant="middle" component="div" style={{ margin: '1rem 0 2rem' }} />
+    <TitleH3 icon={<FaceIcon style={{ position: 'relative', top: 5, marginRight: 5 }} />}>
+      影響を受けたミュージシャン
+    </TitleH3>
+    <BlockFloatingList />
   </Layout>
 )
 

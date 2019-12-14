@@ -1,7 +1,7 @@
 const topText = [
   {
     title: '音楽遍歴',
-    content: 'いままでどういう音楽を聴いてきたかを時系列で綴ってみました。',
+    content: 'どういった経緯で音楽を好きになってきたか。<br>初めて買ったCD。初めて衝撃を受けた楽曲などについて書きます。',
     link: '/history',
     linkText: 'History',
   },
