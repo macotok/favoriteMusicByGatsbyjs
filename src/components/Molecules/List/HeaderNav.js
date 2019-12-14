@@ -14,6 +14,7 @@ const NavItem = styled.li`
 const ManuItem = styled(Link)`
   color: white;
   display: block;
+  border-bottom: ${props => props.current ? '1px solid white' : 'none'};
   ${LinkAnimation}
 `;
 
@@ -38,13 +39,20 @@ const HeaderNav = () => (
   `} render={props => (
       <nav>
         <NavList>
-          {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, index) => (
-            <NavItem key={index}>
-              <ManuItem to={item.url} key={item.title}>
-                {item.title}
-              </ManuItem>
-            </NavItem>
-          ))};
+          {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, index) => {
+            const isCurrentPage = (window.location.pathname.split('/')[1]  || 'home') === (item.title).toLowerCase();
+            return (
+              <NavItem key={index}>
+                <ManuItem
+                  to={item.url}
+                  key={item.title}
+                  current={isCurrentPage ? 1 : 0}
+                >
+                  {item.title}
+                </ManuItem>
+              </NavItem>
+            );
+          })};
         </NavList>
       </nav>
   )} />
