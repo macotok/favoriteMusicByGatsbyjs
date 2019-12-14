@@ -76,6 +76,12 @@ exports.createPages = ({ graphql, actions }) => {
                     id
                     title
                     content
+                    acf{
+                      photo_url {
+                        id
+                        source_url
+                      }
+                    }
                   }
                 }
               }

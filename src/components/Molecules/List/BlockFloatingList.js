@@ -15,6 +15,16 @@ const BlockListItem = styled.div`
   padding: 16px;
 `;
 
+const BlockListImage = styled.img`
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+`;
+
+const BlockList = styled.div`
+  text-align: center;
+`;
+
 const BlockFloatingList = () => (
   <StaticQuery query={graphql`
     {
@@ -24,6 +34,11 @@ const BlockFloatingList = () => (
             id
             title
             content
+            acf{
+              photo_url {
+                source_url
+              }
+            }
           }
         }
       }
@@ -34,7 +49,8 @@ const BlockFloatingList = () => (
             <TitleH4>
               {keyMusicianItem.node.title}
             </TitleH4>
-            <div dangerouslySetInnerHTML={{ __html: keyMusicianItem.node.content}} />
+            <BlockListImage src={keyMusicianItem.node.acf.photo_url.source_url} alt={keyMusicianItem.node.title} />
+            <BlockList dangerouslySetInnerHTML={{ __html: keyMusicianItem.node.content}} />
           </BlockListItem>
         ))}
       </BlockListWrap>
