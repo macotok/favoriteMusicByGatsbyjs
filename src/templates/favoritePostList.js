@@ -18,7 +18,7 @@ const PageNumber = styled(Link)`
   padding: 8px 16px;
 `;
 
-const blogPostList = ({ pageContext }) => (
+const favoritePostList = ({ pageContext }) => (
   <Layout>
     {
       pageContext.posts.map(post => (
@@ -37,7 +37,7 @@ const blogPostList = ({ pageContext }) => (
     <Pagination>
       {Array.from({ length: pageContext.numberOfPages }).map((page, index) => (
         <PageNumberWrapper key={index} isCurrentPage={index + 1 === pageContext.currentPage}>
-          <PageNumber to={index === 0 ? '/blog' : `/blog/${index + 1}`}>
+          <PageNumber to={index === 0 ? '/favorite' : `/favorite/${index + 1}`}>
             {index + 1}
           </PageNumber>
         </PageNumberWrapper>
@@ -46,4 +46,4 @@ const blogPostList = ({ pageContext }) => (
   </Layout>
 );
 
-export default blogPostList;
+export default favoritePostList;

@@ -132,12 +132,12 @@ exports.createPages = ({ graphql, actions }) => {
           const posts = result.data.allWordpressPost.edges;
           const postsPerPage = 2;
           const numberOfPages = Math.ceil(posts.length / postsPerPage);
-          const blogPostListTemplate = path.resolve('./src/templates/blogPostList.js');
+          const blogPostListTemplate = path.resolve('./src/templates/favoritePostList.js');
 
           Array.from({ length: numberOfPages }).forEach((page, index) => {
             createPage({
               component: slash(blogPostListTemplate),
-              path: index === 0 ? '/blog' : `/blog/${index + 1}`,
+              path: index === 0 ? '/favorite' : `/favorite/${index + 1}`,
               context: {
                 posts: posts.slice(index * postsPerPage, (index * postsPerPage) + postsPerPage),
                 numberOfPages,
