@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import styled from 'styled-components';
-import TitleH4 from '../../Atoms/TitleH4';
+import TitleH4 from '../../Atoms/Title/TitleH4';
 
 const BlockListWrap = styled.div`
   display: flex;

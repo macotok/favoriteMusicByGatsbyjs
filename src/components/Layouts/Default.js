@@ -8,18 +8,18 @@ import styled, {
 } from 'styled-components';
 import theme from '../../styled/theme';
 import Header from '../Organisms/Header';
-import LayoutStyled from './LayoutStyled';
+import DefaultStyled from './DefaultStyled';
 
 const LayoutWrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
 `;
 
-const Layout = ({ children }) => (
+const Default = ({ children }) => (
  <StylesProvider injectFirst>
    <MaterialThemeProvider theme={theme}>
      <StyledThemeProvider theme={theme}>
-       <LayoutStyled />
+       <DefaultStyled />
        <Header />
        <LayoutWrapper>
         {children}
@@ -29,4 +29,4 @@ const Layout = ({ children }) => (
  </StylesProvider>
 );
 
-export default Layout
+export default Default

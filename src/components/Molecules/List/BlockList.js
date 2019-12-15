@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Typography from '@material-ui/core/Typography';
-import TitleH2 from '../../Atoms/TitleH2';
-import ButtonPrimary from '../../Atoms/ButtonPrimary';
-import Divider from '@material-ui/core/Divider';
+import {Divider, Typography } from '@material-ui/core';
+import TitleH2 from '../../Atoms/Title/TitleH2';
+import ButtonPrimary from '../../Atoms/Button/ButtonPrimary';
 
 const BlockListWrap = styled.div`
   margin-bottom: 2rem;

@@ -1,21 +1,13 @@
 import React from 'react';
-import Layout from '../components/Layout/Layout';
-import { Link } from 'gatsby';
+import { Divider, Typography } from '@material-ui/core';
 import styled from 'styled-components';
+import Layout from '../components/Layouts/Default';
+import TitleH2 from '../components/Atoms/Title/TitleH2';
+import Pagination from '../components/Atoms/Pagination/Pagination';
 
-const Pagination = styled.div`
+const PaginationWrap = styled.div`
   display: flex;
   justify-content: flex-end;
-`;
-
-const PageNumberWrapper = styled.div`
-  border: 1px solid #eee;
-  background-color: ${props => props.isCurrentPage ? '#eee' : 'white'};
-`;
-
-const PageNumber = styled(Link)`
-  display: block;
-  padding: 8px 16px;
 `;
 
 const favoritePostList = ({ pageContext }) => (
@@ -23,26 +15,17 @@ const favoritePostList = ({ pageContext }) => (
     {
       pageContext.posts.map(post => (
         <div key={post.node.wordpress_id}>
-          <h3 dangerouslySetInnerHTML={{ __html: post.node.title }} />
-          <small>
-            {post.node.date}
-          </small>
-          <p dangerouslySetInnerHTML={{ __html: post.node.content }} />
-          <div>
-            <Link to={`/post/${post.node.wordpress_id}`}>Read More</Link>
-          </div>
+          <TitleH2>
+            {post.node.title}
+          </TitleH2>
+          <Typography variant="body1" gutterBottom dangerouslySetInnerHTML={{ __html: post.node.content }} />
+          <Divider variant="middle" component="div" />
         </div>
       ))
     }
-    <Pagination>
-      {Array.from({ length: pageContext.numberOfPages }).map((page, index) => (
-        <PageNumberWrapper key={index} isCurrentPage={index + 1 === pageContext.currentPage}>
-          <PageNumber to={index === 0 ? '/favorite' : `/favorite/${index + 1}`}>
-            {index + 1}
-          </PageNumber>
-        </PageNumberWrapper>
-      ))}
-    </Pagination>
+    <PaginationWrap>
+      <Pagination pageContext={pageContext} pathName="favorite" />
+    </PaginationWrap>
   </Layout>
 );
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Divider, Typography } from '@material-ui/core';
 import FaceIcon from '@material-ui/icons/Face';
-import Layout from '../components/Layout/Layout';
-import TitleH2 from '../components/Atoms/TitleH2';
-import TitleH3 from '../components/Atoms/TitleH3';
-import ArticleText from '../components/Atoms/ArticleText';
+import Layout from '../components/Layouts/Default';
+import TitleH2 from '../components/Atoms/Title/TitleH2';
+import TitleH3 from '../components/Atoms/Title/TitleH3';
+import ArticleText from '../components/Atoms/Text/ArticleText';
 import BlockFloatingList from '../components/Molecules/List/BlockFloatingList';
 
 export default ({ pageContext }) => (

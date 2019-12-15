@@ -1,6 +1,6 @@
 import React from 'react';
-import Layout from '../components/Layout/Layout';
-import Text from '../components/Atoms/Text';
+import Layout from '../components/Layouts/Default';
+import Text from '../components/Atoms/Text/Text';
 import topText from '../text/top';
 import BlockList from '../components/Molecules/List/BlockList';
 

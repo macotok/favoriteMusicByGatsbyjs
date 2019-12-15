@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const LayoutStyled = createGlobalStyle`
+const DefaultStyled = createGlobalStyle`
   /*
   html5doctor.com Reset Stylesheet
   v1.6.1
@@ -108,4 +108,4 @@ const LayoutStyled = createGlobalStyle`
   }
 `;
 
-export default LayoutStyled;
+export default DefaultStyled;

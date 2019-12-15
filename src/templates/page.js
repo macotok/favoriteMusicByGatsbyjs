@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import TitleH2 from '../components/Atoms/TitleH2';
-import Layout from '../components/Layout/Layout';
+import TitleH2 from '../components/Atoms/Title/TitleH2';
+import Layout from '../components/Layouts/Default';
 
 export default ({ pageContext }) => (
   <Layout>

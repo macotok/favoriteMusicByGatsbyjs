@@ -130,7 +130,7 @@ exports.createPages = ({ graphql, actions }) => {
             reject(result.errors);
           }
           const posts = result.data.allWordpressPost.edges;
-          const postsPerPage = 2;
+          const postsPerPage = 3;
           const numberOfPages = Math.ceil(posts.length / postsPerPage);
           const blogPostListTemplate = path.resolve('./src/templates/favoritePostList.js');
 
