@@ -1,9 +1,8 @@
 import React from 'react';
-import { Divider, Typography } from '@material-ui/core';
 import styled from 'styled-components';
 import Layout from '../components/Layouts/Default';
-import TitleH2 from '../components/Atoms/Title/TitleH2';
 import Pagination from '../components/Atoms/Pagination/Pagination';
+import PostList from '../components/Molecules/List/PostList';
 
 const PaginationWrap = styled.div`
   display: flex;
@@ -13,14 +12,8 @@ const PaginationWrap = styled.div`
 const favoritePostList = ({ pageContext }) => (
   <Layout>
     {
-      pageContext.posts.map(post => (
-        <div key={post.node.wordpress_id}>
-          <TitleH2>
-            {post.node.title}
-          </TitleH2>
-          <Typography variant="body1" gutterBottom dangerouslySetInnerHTML={{ __html: post.node.content }} />
-          <Divider variant="middle" component="div" />
-        </div>
+      pageContext.posts.map((post, index) => (
+        <PostList post={post} isLastChild={pageContext.posts.length === (index + 1)} key={index} />
       ))
     }
     <PaginationWrap>
