@@ -13,7 +13,7 @@ const BlockListWrap = styled.div`
 const LinkText = styled(Link)`
   color: white;
   text-decoration: none;
-`
+`;
 
 const BlockList = ({ list, isLastChild }) => (
   <BlockListWrap>

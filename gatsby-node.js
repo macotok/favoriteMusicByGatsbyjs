@@ -43,7 +43,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         // Create Page pages.
-        const pageTemplate = path.resolve("./src/templates/page.js");
+        const pageTemplate = path.resolve("./src/templates/post.js");
         const historyUnderContentTemplate = path.resolve("./src/templates/historyUnderContent.js");
         // We want to create a detailed page for each
         // page node. We'll just use the WordPress Slug for the slug.
@@ -146,11 +146,11 @@ exports.createPages = ({ graphql, actions }) => {
             });
           });
 
-          const pageTemplate = path.resolve("./src/templates/page.js");
+          const postTemplate = path.resolve("./src/templates/post.js");
           _.each(posts, (post)=> {
             createPage({
               path: `/post/${post.node.wordpress_id}`,
-              component: slash(pageTemplate),
+              component: slash(postTemplate),
               context: post.node,
             });
           });
