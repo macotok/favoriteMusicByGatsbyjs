@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Article = styled.div`
   p {
-    padding: 1rem 0;
+    padding: 1rem 0;;
   }
   img {
     max-width: 300px;

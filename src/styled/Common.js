@@ -6,7 +6,7 @@ const LinkAnimation = css`
   text-decoration: none;
   &:before {
     position: absolute;
-    top: 1.4em;
+    top: 1.55rem;
     left: 0;
     content: "";
     display: inline-block;

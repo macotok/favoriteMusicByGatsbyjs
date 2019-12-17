@@ -1,14 +1,14 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
+import ArticleText from '../components/Atoms/Text/ArticleText';
 
 const post = ({ pageContext }) => (
   <Layout>
     <TitleH2>
       {pageContext.title}
     </TitleH2>
-    <Typography variant="body1" gutterBottom dangerouslySetInnerHTML={{ __html: pageContext.content }} />
+    <ArticleText text={pageContext.content} />
   </Layout>
 );
 

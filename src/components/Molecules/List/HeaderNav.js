@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import LinkAnimation from '../../../styled/Common';
 
 const NavList = styled.ul`
@@ -14,8 +14,12 @@ const NavItem = styled.li`
 const ManuItem = styled(Link)`
   color: white;
   display: block;
-  border-bottom: ${props => props.current ? '1px solid white' : 'none'};
-  ${LinkAnimation}
+  ${props => props.current ? css`
+    border-bottom: 1px solid white;
+    text-decoration: none;
+  ` : css`
+    ${LinkAnimation}
+  `}
 `;
 
 const HeaderNav = () => (

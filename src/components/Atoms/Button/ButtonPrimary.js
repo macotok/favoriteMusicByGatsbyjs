@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import LinkIcon from '@material-ui/icons/Link';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import styled from 'styled-components';
 
 const ButtonWrap = styled.div`
@@ -11,6 +11,7 @@ const ButtonWrap = styled.div`
 
 const ButtonStyle = styled(Button)`
   color: white;
+  text-transform: none;
 `;
 
 const ButtonPrimary = ({ children }) => (
@@ -18,7 +19,7 @@ const ButtonPrimary = ({ children }) => (
     <ButtonStyle
       variant="contained"
       color="secondary"
-      startIcon={<LinkIcon />}
+      endIcon={<ArrowForwardIosIcon />}
     >
       {children}
     </ButtonStyle>

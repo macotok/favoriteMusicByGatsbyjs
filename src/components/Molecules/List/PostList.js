@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Divider, Typography } from '@material-ui/core';
+import { Divider } from '@material-ui/core';
 import TitleH2 from '../../Atoms/Title/TitleH2';
 import ButtonPrimary from '../../Atoms/Button/ButtonPrimary';
+import ArticleText from '../../Atoms/Text/ArticleText';
 
 const LinkText = styled(Link)`
   color: white;
@@ -15,13 +16,13 @@ const PostList = ({ post, isLastChild }) => (
     <TitleH2>
       {post.node.title}
     </TitleH2>
-    <Typography variant="body1" gutterBottom dangerouslySetInnerHTML={{ __html: post.node.excerpt }} />
+    <ArticleText text={post.node.excerpt} />
     <ButtonPrimary>
       <LinkText to={`post/${post.node.wordpress_id}`}>
         Read More...
       </LinkText>
     </ButtonPrimary>
-    {isLastChild ? null : (<Divider variant="middle" component="div" />)}
+    {isLastChild ? null : (<Divider variant="middle" component="div" style={{ marginBottom: '2rem' }} />)}
   </>
 );
 

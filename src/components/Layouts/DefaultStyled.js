@@ -31,7 +31,7 @@ const DefaultStyled = createGlobalStyle`
   }
   
   body {
-    line-height:1.4;
+    line-height:1.6;
   }
   
   article,aside,details,figcaption,figure,

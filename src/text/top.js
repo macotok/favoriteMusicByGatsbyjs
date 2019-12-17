@@ -8,8 +8,8 @@ const topText = [
   {
     title: '好きな音楽',
     content: 'いままで聴いてきた好きな音楽をお気に入り付きで紹介します。',
-    link: '/blog',
-    linkText: 'Blog',
+    link: '/favorite',
+    linkText: 'Favorite',
   }
 ];
 
