@@ -6,7 +6,7 @@ import PostList from '../components/Molecules/List/PostList';
 
 const PaginationWrap = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 const favoritePostList = ({ pageContext }) => (
