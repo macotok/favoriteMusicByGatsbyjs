@@ -120,6 +120,9 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt
                   date(formatString: "YYYY/MM/DD hh:mm")
                   slug
+                  acf{
+                    recommend
+                  }
                 }
               }
             }
@@ -149,7 +152,7 @@ exports.createPages = ({ graphql, actions }) => {
           const postTemplate = path.resolve("./src/templates/post.js");
           _.each(posts, (post)=> {
             createPage({
-              path: `/post/${post.node.wordpress_id}`,
+              path: `/favorite/${post.node.wordpress_id}`,
               component: slash(postTemplate),
               context: post.node,
             });

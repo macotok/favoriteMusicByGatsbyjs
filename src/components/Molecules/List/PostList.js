@@ -18,7 +18,7 @@ const PostList = ({ post, isLastChild }) => (
     </TitleH2>
     <ArticleText text={post.node.excerpt} />
     <ButtonPrimary>
-      <LinkText to={`post/${post.node.wordpress_id}`}>
+      <LinkText to={`favorite/${post.node.wordpress_id}`}>
         Read More...
       </LinkText>
     </ButtonPrimary>
