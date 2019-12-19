@@ -22,7 +22,9 @@ const Default = ({ children }) => (
        <DefaultStyled />
        <Header />
        <LayoutWrapper>
-        {children}
+         <main>
+           {children}
+         </main>
        </LayoutWrapper>
      </StyledThemeProvider>
    </MaterialThemeProvider>
