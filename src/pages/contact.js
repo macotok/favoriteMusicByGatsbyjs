@@ -1,8 +1,9 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { Link } from 'gatsby';
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
-import { MenuItem, TextField, Typography } from '@material-ui/core';
+import { Button, MenuItem, TextField, Typography } from '@material-ui/core';
 
 const currencies = [
   {
@@ -56,7 +57,7 @@ const selectField = (field) => {
 }
 
 const Contact = props => {
-  const { handleSubmit } = props
+  const { handleSubmit, pristine, submitting, invalid } = props
   return (
     <Layout>
       <TitleH2>
@@ -75,7 +76,23 @@ const Contact = props => {
         <div>
           <Field label="カテゴリ" name="category" type="select" component={selectField} />
         </div>
-        <button type="submit">Submit</button>
+        <Button
+          label="Submit"
+          type="submit"
+          disabled={pristine || submitting || invalid}
+          variant="contained"
+          color="primary"
+        >
+          確認
+        </Button>
+        <Button
+          label="Cancel"
+          variant="contained"
+          color="primary"
+        >
+          キャンセル
+        </Button>
+
       </form>
     </Layout>
   );
