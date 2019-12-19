@@ -2,9 +2,28 @@ import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
-import { TextField, Typography } from '@material-ui/core';
+import { MenuItem, TextField, Typography } from '@material-ui/core';
 
-const RenderField = (field) => {
+const currencies = [
+  {
+    value: 'USD',
+    label: '$',
+  },
+  {
+    value: 'EUR',
+    label: '€',
+  },
+  {
+    value: 'BTC',
+    label: '฿',
+  },
+  {
+    value: 'JPY',
+    label: '¥',
+  },
+];
+
+const textField = (field) => {
   const { input, label, type, meta: { touched, error } } = field;
   return (
     <TextField
@@ -14,8 +33,27 @@ const RenderField = (field) => {
       {...input}
       fullWidth={true}
     />
-  )
+  );
 };
+
+const selectField = (field) => {
+  const { input, label, type, meta: { touched, error } } = field;
+
+  return (
+    <TextField
+      select
+      label={label}
+      type={type}
+      fullWidth={true}
+    >
+      {currencies.map(option => (
+        <MenuItem key={option.value} value={option.value}>
+          {option.label}
+        </MenuItem>
+      ))}
+    </TextField>
+  )
+}
 
 const Contact = props => {
   const { handleSubmit } = props
@@ -29,10 +67,13 @@ const Contact = props => {
       </Typography>
       <form onSubmit={handleSubmit}>
         <div>
-          <Field label="お名前" name="name" type="text" component={RenderField} />
+          <Field label="お名前" name="name" type="text" component={textField} />
         </div>
         <div>
-          <Field label="メールアドレス" name="email" type="email" component={RenderField} />
+          <Field label="メールアドレス" name="email" type="email" component={textField} />
+        </div>
+        <div>
+          <Field label="カテゴリ" name="category" type="select" component={selectField} />
         </div>
         <button type="submit">Submit</button>
       </form>
