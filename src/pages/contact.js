@@ -1,6 +1,7 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
 import { Typography } from '@material-ui/core';
+import styled from 'styled-components';
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
 import TextInput from '../components/Atoms/Input/TextInput';
@@ -9,9 +10,27 @@ import SelectInput from '../components/Atoms/Input/SelectInput';
 import CancelButton from '../components/Atoms/Button/CancelButton';
 import SubmitButton from '../components/Atoms/Button/SubmitButton';
 
+const Form = styled.form`
+  margin: 2rem 0 0;
+`;
+
+const TextStyle = styled.div`
+  margin: 0 0 2rem;
+  width: 40%;
+`;
+
+const TextAreaStyle = styled.div`
+  margin: 0 0 2rem;
+`;
+
+const ButtonBlock = styled.div`
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+`;
+
 const Contact = props => {
   const { handleSubmit, pristine, submitting, invalid } = props;
-  const disabledProps = { pristine, submitting, invalid };
   return (
     <Layout>
       <TitleH2>
@@ -20,26 +39,28 @@ const Contact = props => {
       <Typography variant="body2" gutterBottom>
         取り上げて欲しいテーマやミュージシャン、または記事に関するお問い合わせはこちらになります。
       </Typography>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <Form onSubmit={handleSubmit}>
+        <TextStyle>
           <Field label="お名前" name="name" type="text" component={TextInput} />
-        </div>
-        <div>
+        </TextStyle>
+        <TextStyle>
           <Field label="メールアドレス" name="email" type="email" component={TextInput} />
-        </div>
-        <div>
+        </TextStyle>
+        <TextStyle>
           <Field label="お問い合わせカテゴリ" labelId="contactCategory" name="category" type="select" component={SelectInput} />
-        </div>
-        <div>
+        </TextStyle>
+        <TextAreaStyle>
           <Field label="お問い合わせ内容" name="text" type="text" component={TextAreaInput} />
-        </div>
-        <CancelButton>
-          キャンセル
-        </CancelButton>
-        <SubmitButton disabledProps={disabledProps}>
-          確認
-        </SubmitButton>
-      </form>
+        </TextAreaStyle>
+        <ButtonBlock>
+          <CancelButton>
+            キャンセル
+          </CancelButton>
+          <SubmitButton disabledProps={{ pristine, submitting, invalid }}>
+            確認
+          </SubmitButton>
+        </ButtonBlock>
+      </Form>
     </Layout>
   );
 };
