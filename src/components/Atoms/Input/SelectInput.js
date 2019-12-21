@@ -2,7 +2,7 @@ import React from 'react';
 import { InputLabel, MenuItem, Select } from '@material-ui/core';
 
 const SelectInput = (field) => {
-  const { input, label, type, labelId, meta: { touched, error } } = field;
+  const { input, label, type, labelId, selectValue, meta: { touched, error } } = field;
 
   return (
     <>
@@ -15,9 +15,11 @@ const SelectInput = (field) => {
         {...input}
         fullWidth
       >
-        <MenuItem value={10}>Ten</MenuItem>
-        <MenuItem value={20}>Twenty</MenuItem>
-        <MenuItem value={30}>Thirty</MenuItem>
+        {
+          selectValue.map(select => (
+            <MenuItem value={select.value}>{select.text}</MenuItem>
+          ))
+        }
       </Select>
     </>
   );

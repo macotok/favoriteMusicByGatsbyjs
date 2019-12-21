@@ -9,6 +9,7 @@ import TextAreaInput from '../components/Atoms/Input/TextAreaInput';
 import SelectInput from '../components/Atoms/Input/SelectInput';
 import CancelButton from '../components/Atoms/Button/CancelButton';
 import SubmitButton from '../components/Atoms/Button/SubmitButton';
+import { CONTACT_SELECT } from '../constants';
 
 const Form = styled.form`
   margin: 2rem 0 0;
@@ -47,7 +48,14 @@ const Contact = props => {
           <Field label="メールアドレス" name="email" type="email" component={TextInput} />
         </TextStyle>
         <TextStyle>
-          <Field label="お問い合わせカテゴリ" labelId="contactCategory" name="category" type="select" component={SelectInput} />
+          <Field
+            label="お問い合わせカテゴリ"
+            labelId="contactCategory"
+            ame="category"
+            type="select"
+            selectValue={CONTACT_SELECT}
+            component={SelectInput}
+          />
         </TextStyle>
         <TextAreaStyle>
           <Field label="お問い合わせ内容" name="text" type="text" component={TextAreaInput} />
