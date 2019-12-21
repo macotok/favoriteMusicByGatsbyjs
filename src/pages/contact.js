@@ -1,60 +1,11 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Link } from 'gatsby';
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
-import { Button, MenuItem, TextField, Typography } from '@material-ui/core';
-
-const currencies = [
-  {
-    value: 'USD',
-    label: '$',
-  },
-  {
-    value: 'EUR',
-    label: '€',
-  },
-  {
-    value: 'BTC',
-    label: '฿',
-  },
-  {
-    value: 'JPY',
-    label: '¥',
-  },
-];
-
-const textField = (field) => {
-  const { input, label, type, meta: { touched, error } } = field;
-  return (
-    <TextField
-      label={label}
-      type={type}
-      errorText={touched && error}
-      {...input}
-      fullWidth={true}
-    />
-  );
-};
-
-const selectField = (field) => {
-  const { input, label, type, meta: { touched, error } } = field;
-
-  return (
-    <TextField
-      select
-      label={label}
-      type={type}
-      fullWidth={true}
-    >
-      {currencies.map(option => (
-        <MenuItem key={option.value} value={option.value}>
-          {option.label}
-        </MenuItem>
-      ))}
-    </TextField>
-  )
-}
+import TextInput from '../components/Input/TextInput';
+import TextAreaInput from '../components/Input/TextAreaInput';
+import SelectInput from '../components/Input/SelectInput';
+import { Button, TextField, Typography } from '@material-ui/core';
 
 const Contact = props => {
   const { handleSubmit, pristine, submitting, invalid } = props
@@ -68,14 +19,24 @@ const Contact = props => {
       </Typography>
       <form onSubmit={handleSubmit}>
         <div>
-          <Field label="お名前" name="name" type="text" component={textField} />
+          <Field label="お名前" name="name" type="text" component={TextInput} />
         </div>
         <div>
-          <Field label="メールアドレス" name="email" type="email" component={textField} />
+          <Field label="メールアドレス" name="email" type="email" component={TextInput} />
         </div>
         <div>
-          <Field label="カテゴリ" name="category" type="select" component={selectField} />
+          <Field label="お問い合わせカテゴリ" name="category" type="select" component={SelectInput} />
         </div>
+        <div>
+          <Field label="お問い合わせ内容" name="text" type="text" component={TextAreaInput} />
+        </div>
+        <Button
+          label="Cancel"
+          variant="contained"
+          color="primary"
+        >
+          キャンセル
+        </Button>
         <Button
           label="Submit"
           type="submit"
@@ -85,14 +46,6 @@ const Contact = props => {
         >
           確認
         </Button>
-        <Button
-          label="Cancel"
-          variant="contained"
-          color="primary"
-        >
-          キャンセル
-        </Button>
-
       </form>
     </Layout>
   );
