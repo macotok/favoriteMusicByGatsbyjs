@@ -61,7 +61,7 @@ const Contact = props => {
           <Field label="お問い合わせ内容" name="text" type="text" component={TextAreaInput} />
         </TextAreaStyle>
         <ButtonBlock>
-          <CancelButton>
+          <CancelButton linkTo="/">
             キャンセル
           </CancelButton>
           <SubmitButton disabledProps={{ pristine, submitting, invalid }}>
@@ -77,6 +77,6 @@ const validate = values => {
   const errors = {};
   if (!values.name) errors.name = 'Titleを入力してください';
   return errors;
-}
+};
 
 export default reduxForm({ validate, form: 'contact' })(Contact);
