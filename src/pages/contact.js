@@ -1,14 +1,17 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { Typography } from '@material-ui/core';
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
-import TextInput from '../components/Input/TextInput';
-import TextAreaInput from '../components/Input/TextAreaInput';
-import SelectInput from '../components/Input/SelectInput';
-import { Button, TextField, Typography } from '@material-ui/core';
+import TextInput from '../components/Atoms/Input/TextInput';
+import TextAreaInput from '../components/Atoms/Input/TextAreaInput';
+import SelectInput from '../components/Atoms/Input/SelectInput';
+import CancelButton from '../components/Atoms/Button/CancelButton';
+import SubmitButton from '../components/Atoms/Button/SubmitButton';
 
 const Contact = props => {
-  const { handleSubmit, pristine, submitting, invalid } = props
+  const { handleSubmit, pristine, submitting, invalid } = props;
+  const disabledProps = { pristine, submitting, invalid };
   return (
     <Layout>
       <TitleH2>
@@ -25,27 +28,17 @@ const Contact = props => {
           <Field label="メールアドレス" name="email" type="email" component={TextInput} />
         </div>
         <div>
-          <Field label="お問い合わせカテゴリ" name="category" type="select" component={SelectInput} />
+          <Field label="お問い合わせカテゴリ" labelId="contactCategory" name="category" type="select" component={SelectInput} />
         </div>
         <div>
           <Field label="お問い合わせ内容" name="text" type="text" component={TextAreaInput} />
         </div>
-        <Button
-          label="Cancel"
-          variant="contained"
-          color="primary"
-        >
+        <CancelButton>
           キャンセル
-        </Button>
-        <Button
-          label="Submit"
-          type="submit"
-          disabled={pristine || submitting || invalid}
-          variant="contained"
-          color="primary"
-        >
+        </CancelButton>
+        <SubmitButton disabledProps={disabledProps}>
           確認
-        </Button>
+        </SubmitButton>
       </form>
     </Layout>
   );

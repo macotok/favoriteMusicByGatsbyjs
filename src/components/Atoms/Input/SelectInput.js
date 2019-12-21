@@ -2,13 +2,13 @@ import React from 'react';
 import { InputLabel, MenuItem, Select } from '@material-ui/core';
 
 const SelectInput = (field) => {
-  const { input, label, type, meta: { touched, error } } = field;
+  const { input, label, type, labelId, meta: { touched, error } } = field;
 
   return (
     <>
-      <InputLabel id="demo-simple-select-label">Age</InputLabel>
+      <InputLabel id={labelId}>{label}</InputLabel>
       <Select
-        labelId="demo-simple-select-label"
+        labelId={labelId}
         label={label}
         type={type}
         errorText={touched && error}
