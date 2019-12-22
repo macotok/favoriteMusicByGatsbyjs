@@ -7,6 +7,7 @@ import styled, {
   ThemeProvider as StyledThemeProvider
 } from 'styled-components';
 import theme from '../../styled/theme';
+import Footer from '../Atoms/Text/Footer';
 import Header from '../Organisms/Header';
 import DefaultStyled from './DefaultStyled';
 
@@ -26,6 +27,7 @@ const Default = ({ children }) => (
            {children}
          </main>
        </LayoutWrapper>
+       <Footer />
      </StyledThemeProvider>
    </MaterialThemeProvider>
  </StylesProvider>
