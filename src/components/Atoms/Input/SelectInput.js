@@ -1,5 +1,6 @@
 import React from 'react';
 import { InputLabel, MenuItem, Select } from '@material-ui/core';
+import ErrorText from '../Text/ErrorText';
 
 const SelectInput = (field) => {
   const { input, label, type, labelId, selectValue, meta: { touched, error } } = field;
@@ -16,12 +17,14 @@ const SelectInput = (field) => {
       >
         {
           selectValue.map((select, index) => (
-            <MenuItem value={select.value} key={index}>{select.text}</MenuItem>
+            <MenuItem value={select.value} key={index}>
+              {select.text}
+            </MenuItem>
           ))
         }
       </Select>
       {
-        touched && ((error && <span>{error}</span>))
+        touched && ((error && <ErrorText>{error}</ErrorText>))
       }
     </>
   );
