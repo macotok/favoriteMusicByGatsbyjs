@@ -114,13 +114,13 @@ module.exports = {
         // all routes that begin with `yoast` from fetch.
         // Whitelisted routes using glob patterns
         includedRoutes: [
-          "**/categories",
+          // "**/categories",
           "**/posts",
           "**/pages",
           "**/media",
-          "**/tags",
-          "**/taxonomies",
-          "**/users",
+          // "**/tags",
+          // "**/taxonomies",
+          // "**/users",
           "**/menus",
           "**/keymusician",
         ],
