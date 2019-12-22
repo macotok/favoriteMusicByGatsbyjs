@@ -21,6 +21,9 @@ const SelectInput = (field) => {
           ))
         }
       </Select>
+      {
+        touched && ((error && <span>{error}</span>))
+      }
     </>
   );
 };

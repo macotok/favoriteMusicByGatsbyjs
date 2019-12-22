@@ -10,6 +10,7 @@ import SelectInput from '../components/Atoms/Input/SelectInput';
 import CancelButton from '../components/Atoms/Button/CancelButton';
 import SubmitButton from '../components/Atoms/Button/SubmitButton';
 import { CONTACT_SELECT } from '../constants';
+import { required, minLength2, email} from '../validation';
 
 const Form = styled.form`
   margin: 2rem 0 0;
@@ -42,10 +43,22 @@ const Contact = props => {
       </Typography>
       <Form onSubmit={handleSubmit}>
         <TextStyle>
-          <Field label="お名前" name="name" type="text" component={TextInput} />
+          <Field
+            label="お名前"
+            name="name"
+            type="text"
+            validate={[required, minLength2]}
+            component={TextInput}
+          />
         </TextStyle>
         <TextStyle>
-          <Field label="メールアドレス" name="email" type="email" component={TextInput} />
+          <Field
+            label="メールアドレス"
+            name="email"
+            type="email"
+            validate={[required, email]}
+            component={TextInput}
+          />
         </TextStyle>
         <TextStyle>
           <Field
@@ -53,19 +66,26 @@ const Contact = props => {
             labelId="contactCategory"
             ame="category"
             type="select"
+            validate={[required]}
             selectValue={CONTACT_SELECT}
             component={SelectInput}
           />
         </TextStyle>
         <TextAreaStyle>
-          <Field label="お問い合わせ内容" name="text" type="text" component={TextAreaInput} />
+          <Field
+            label="お問い合わせ内容"
+            name="text"
+            type="text"
+            validate={[required]}
+            component={TextAreaInput}
+          />
         </TextAreaStyle>
         <ButtonBlock>
           <CancelButton linkTo="/">
             キャンセル
           </CancelButton>
           <SubmitButton disabledProps={{ pristine, submitting, invalid }}>
-            確認
+            送信
           </SubmitButton>
         </ButtonBlock>
       </Form>
@@ -73,10 +93,4 @@ const Contact = props => {
   );
 };
 
-const validate = values => {
-  const errors = {};
-  if (!values.name) errors.name = 'Titleを入力してください';
-  return errors;
-};
-
-export default reduxForm({ validate, form: 'contact' })(Contact);
+export default reduxForm({ form: 'contact' })(Contact);
