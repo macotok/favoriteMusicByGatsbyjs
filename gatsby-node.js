@@ -65,49 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
       // ==== END PAGES ====
 
-      // ==== keyMusician ====
-      .then(() => {
-        graphql(
-          `
-            {
-              allWordpressWpKeymusician{
-                edges{
-                  node{
-                    id
-                    title
-                    content
-                    acf{
-                      photo_url {
-                        id
-                        source_url
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          `
-        ).then(result => {
-          if (result.errors) {
-            console.log(result.errors)
-            reject(result.errors)
-          }
-          const portfolioTemplate = path.resolve("./src/templates/keyMusician.js")
-          // We want to create a detailed page for each
-          // post node. We'll just use the WordPress Slug for the slug.
-          // The Post ID is prefixed with 'POST_'
-          _.each(result.data.allWordpressWpKeymusician.edges, edge => {
-            createPage({
-              path: `/keyMusician/${edge.node.slug}/`,
-              component: slash(portfolioTemplate),
-              context: edge.node,
-            })
-          })
-          resolve()
-        })
-      })
-    // ==== END Keymusician ====
-    // ==== BLOG POST ====
+      // ==== BLOG POST ====
       .then(() => {
         graphql(`
           {

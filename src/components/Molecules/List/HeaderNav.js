@@ -44,7 +44,7 @@ const HeaderNav = () => (
       <nav>
         <NavList>
           {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, index) => {
-            const isCurrentPage = (window.location.pathname.split('/')[1]  || 'home') === (item.title).toLowerCase();
+            const isCurrentPage = true;
             return (
               <NavItem key={index}>
                 <ManuItem
