@@ -11,13 +11,12 @@ const SelectInput = (field) => {
         labelId={labelId}
         label={label}
         type={type}
-        errorText={touched && error}
         {...input}
         fullWidth
       >
         {
-          selectValue.map(select => (
-            <MenuItem value={select.value}>{select.text}</MenuItem>
+          selectValue.map((select, index) => (
+            <MenuItem value={select.value} key={index}>{select.text}</MenuItem>
           ))
         }
       </Select>

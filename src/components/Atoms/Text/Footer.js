@@ -1,18 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import Text from './Text';
 
 const FooterWrap = styled.div`
   text-align: center;
   padding: 2rem 0 1rem;
+  color: #999;
+`;
+
+const FooterText = styled.p`
+  font-size: .8rem;
 `;
 
 const Footer = () => (
   <FooterWrap>
     <footer>
-      <Text>
+      <FooterText>
         xxxxx.com
-      </Text>
+      </FooterText>
     </footer>
   </FooterWrap>
 );

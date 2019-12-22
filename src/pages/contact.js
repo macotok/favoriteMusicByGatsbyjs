@@ -64,7 +64,7 @@ const Contact = props => {
           <Field
             label="お問い合わせカテゴリ"
             labelId="contactCategory"
-            ame="category"
+            name="category"
             type="select"
             validate={[required]}
             selectValue={CONTACT_SELECT}

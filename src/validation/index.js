@@ -1,5 +1,5 @@
 export const required = value => (value || typeof value === 'number' ? undefined : 'Required')
-export const minLength = min => value =>
+const minLength = min => value =>
   value && value.length < min ? `Must be ${min} characters or more` : undefined
 export const minLength2 = minLength(2);
 export const email = value =>

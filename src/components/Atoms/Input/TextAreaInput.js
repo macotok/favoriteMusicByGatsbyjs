@@ -8,7 +8,6 @@ const TextAreaInput = (field) => {
       <TextField
         label={label}
         type={type}
-        errorText={touched && error}
         {...input}
         fullWidth
         multiline
