@@ -32,9 +32,9 @@ const ButtonBlock = styled.div`
 `;
 
 const Contact = props => {
-  const { handleSubmit, pristine, submitting, invalid } = props;
+  const { handleSubmit, pristine, submitting, invalid, location: { pathname } } = props;
   return (
-    <Layout>
+    <Layout pathname={pathname}>
       <TitleH2>
         Contact
       </TitleH2>

@@ -9,8 +9,8 @@ const PaginationWrap = styled.div`
   justify-content: center;
 `;
 
-const favoritePostList = ({ pageContext }) => (
-  <Layout>
+const favoritePostList = ({ pageContext, location: { pathname } }) => (
+  <Layout pathname={pathname}>
     {
       pageContext.posts.map((post, index) => (
         <PostList post={post} isLastChild={pageContext.posts.length === (index + 1)} key={index} />

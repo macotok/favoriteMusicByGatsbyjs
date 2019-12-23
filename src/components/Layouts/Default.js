@@ -16,21 +16,21 @@ const LayoutWrapper = styled.div`
   margin: 0 auto;
 `;
 
-const Default = ({ children }) => (
- <StylesProvider injectFirst>
-   <MaterialThemeProvider theme={theme}>
-     <StyledThemeProvider theme={theme}>
-       <DefaultStyled />
-       <Header />
-       <LayoutWrapper>
-         <main>
-           {children}
-         </main>
-       </LayoutWrapper>
-       <Footer />
-     </StyledThemeProvider>
-   </MaterialThemeProvider>
- </StylesProvider>
+const Default = ({ children, pathname }) => (
+  <StylesProvider injectFirst>
+    <MaterialThemeProvider theme={theme}>
+      <StyledThemeProvider theme={theme}>
+        <DefaultStyled />
+        <Header pathname={pathname} />
+        <LayoutWrapper>
+          <main>
+            {children}
+          </main>
+        </LayoutWrapper>
+        <Footer />
+      </StyledThemeProvider>
+    </MaterialThemeProvider>
+  </StylesProvider>
 );
 
 export default Default

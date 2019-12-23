@@ -19,11 +19,11 @@ const HeaderInner = styled.div`
   height: 100%;
 `;
 
-const Header = () => (
+const Header = ({ pathname }) => (
   <HeaderWrapper>
     <HeaderInner>
       <SiteInfo />
-      <HeaderNav />
+      <HeaderNav pathname={pathname}/>
     </HeaderInner>
   </HeaderWrapper>
 );

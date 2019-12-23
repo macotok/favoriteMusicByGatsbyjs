@@ -11,8 +11,8 @@ const TitleWrap = styled.div`
   line-height: 2;
 `;
 
-const post = ({ pageContext }) => (
-  <Layout>
+const post = ({ pageContext,  location: { pathname } }) => (
+  <Layout pathname={pathname}>
     <TitleWrap>
       <TitleH2>
         {pageContext.title}

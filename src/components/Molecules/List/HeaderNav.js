@@ -22,7 +22,7 @@ const ManuItem = styled(Link)`
   `}
 `;
 
-const HeaderNav = () => (
+const HeaderNav = ({ pathname }) => (
   <StaticQuery query={graphql`
     {
       allWordpressWpApiMenusMenusItems(filter: {
@@ -41,25 +41,25 @@ const HeaderNav = () => (
       }
     }
   `} render={props => (
-      <nav>
-        <NavList>
-          {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, index) => {
-            const isCurrentPage = false;
-            return (
-              <NavItem key={index}>
-                <ManuItem
-                  to={item.url}
-                  key={item.title}
-                  current={isCurrentPage ? 1 : 0}
-                >
-                  {item.title}
-                </ManuItem>
-              </NavItem>
-            );
-          })};
-        </NavList>
-      </nav>
-  )} />
+    <nav>
+      <NavList>
+        {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map((item, index) => {
+          const isCurrentPage = (pathname.split('/')[1]  || 'home') === (item.title).toLowerCase();
+          return (
+            <NavItem key={index}>
+              <ManuItem
+                to={item.url}
+                key={item.title}
+                current={isCurrentPage ? 1 : 0}
+              >
+                {item.title}
+              </ManuItem>
+            </NavItem>
+          );
+        })};
+      </NavList>
+    </nav>
+  )}/>
 );
 
 export default HeaderNav;

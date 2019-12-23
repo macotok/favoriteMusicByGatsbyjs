@@ -7,8 +7,8 @@ import TitleH3 from '../components/Atoms/Title/TitleH3';
 import ArticleText from '../components/Atoms/Text/ArticleText';
 import BlockFloatingList from '../components/Molecules/List/BlockFloatingList';
 
-export default ({ pageContext }) => (
-  <Layout>
+export default ({ pageContext, location: { pathname } }) => (
+  <Layout pathname={pathname}>
     <TitleH2>
       {pageContext.title}
     </TitleH2>
