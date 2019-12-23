@@ -7,7 +7,7 @@ import BlockList from '../components/Molecules/List/BlockList';
 const Home = () => (
   <Layout>
     <Text>
-      ぷうこの勝手に音楽について語るサイトです。<br />
+      ぷうこが勝手に音楽について語るサイトです。<br />
       これまでどういう音楽を聴いてきたか。どういう音楽が好きかをつづってます。
     </Text>
     {

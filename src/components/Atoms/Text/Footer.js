@@ -15,7 +15,7 @@ const Footer = () => (
   <FooterWrap>
     <footer>
       <FooterText>
-        xxxxx.com
+        puko.xyz
       </FooterText>
     </footer>
   </FooterWrap>

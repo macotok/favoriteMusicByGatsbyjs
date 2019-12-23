@@ -36,7 +36,7 @@ const SiteInfo = () => (
     <SiteInfoWrapper>
       <SiteTitle>
         {props.allWordpressSiteMetadata.edges[0].node.name}
-        <MusicNoteOutlinedIcon style={{ position: 'relative', top: 5 }}/>
+        <MusicNoteOutlinedIcon style={{ position: 'relative', top: 5, width: 30 }}/>
       </SiteTitle>
       <SiteDescription>
         {props.allWordpressSiteMetadata.edges[0].node.description}
