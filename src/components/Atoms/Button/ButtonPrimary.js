@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import styled from 'styled-components';
@@ -25,5 +26,9 @@ const ButtonPrimary = ({ children }) => (
     </ButtonStyle>
   </ButtonWrap>
 );
+
+ButtonPrimary.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default ButtonPrimary;
