@@ -1,4 +1,5 @@
 import React from 'react';
+import * as PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Article = styled.div`
@@ -13,5 +14,9 @@ const Article = styled.div`
 const ArticleText = ({ text }) => (
   <Article dangerouslySetInnerHTML={{ __html: text }} />
 );
+
+ArticleText.propTypes = {
+  text: PropTypes.string.isRequired
+};
 
 export default ArticleText;

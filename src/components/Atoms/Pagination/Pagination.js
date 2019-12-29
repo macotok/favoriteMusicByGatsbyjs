@@ -1,4 +1,5 @@
 import React from 'react';
+import * as PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
@@ -18,7 +19,7 @@ const PageNumber = styled(Link)`
   }
 `;
 
-const Pagination = ({pageContext, pathName}) => (
+const Pagination = ({ pageContext, pathName }) => (
   <>
     {Array.from({ length: pageContext.numberOfPages }).map((page, index) => (
       <PageNumberWrapper key={index} isCurrentPage={index + 1 === pageContext.currentPage}>
@@ -29,5 +30,13 @@ const Pagination = ({pageContext, pathName}) => (
     ))}
   </>
 );
+
+Pagination.propTypes = {
+  pageContext: PropTypes.shape({
+    numberOfPages: PropTypes.number,
+    currentPage: PropTypes.number,
+  }).isRequired,
+  pathName: PropTypes.string.isRequired,
+};
 
 export default Pagination;
