@@ -1,8 +1,8 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import { Button } from '@material-ui/core';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { propChildren, propString } from '../../../helpers/propTypes';
 
 const LinkText = styled(Link)`
   color: white;
@@ -21,8 +21,8 @@ const CancelButton = ({ children, linkTo }) => (
 );
 
 CancelButton.propTypes = {
-  children: PropTypes.element.isRequired,
-  linkTo: PropTypes.string.isRequired,
+  children: propChildren(),
+  linkTo: propString().isRequired,
 };
 
 export default CancelButton;

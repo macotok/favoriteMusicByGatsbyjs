@@ -1,6 +1,6 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { propString } from '../../../helpers/propTypes';
 
 const Article = styled.div`
   p {
@@ -16,7 +16,7 @@ const ArticleText = ({ text }) => (
 );
 
 ArticleText.propTypes = {
-  text: PropTypes.string.isRequired
+  text: propString().isRequired
 };
 
 export default ArticleText;

@@ -1,8 +1,8 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import styled from 'styled-components';
+import { propChildren } from '../../../helpers/propTypes';
 
 const ButtonWrap = styled.div`
   display: flex;
@@ -28,7 +28,7 @@ const ButtonPrimary = ({ children }) => (
 );
 
 ButtonPrimary.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: propChildren(),
 };
 
 export default ButtonPrimary;

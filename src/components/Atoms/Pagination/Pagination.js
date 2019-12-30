@@ -1,23 +1,6 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { Link } from 'gatsby';
-
-const PageNumberWrapper = styled.div`
-  border: 1px solid #eee;
-  background-color: ${props => props.isCurrentPage ? '#eee' : 'white'};
-  margin: 2rem 0 4rem 1rem;
-`;
-
-const PageNumber = styled(Link)`
-  display: block;
-  padding: 8px 16px;
-  text-decoration: none;
-  color: ${props => props.theme.palette.primary.main};
-  &:hover {
-    background-color: #eee;
-  }
-`;
+import { PageNumberWrapper, PageNumber } from './PaginationStyled';
+import { propNumber, propShape, propString } from '../../../helpers/propTypes';
 
 const Pagination = ({ pageContext, pathName }) => (
   <>
@@ -32,11 +15,11 @@ const Pagination = ({ pageContext, pathName }) => (
 );
 
 Pagination.propTypes = {
-  pageContext: PropTypes.shape({
-    numberOfPages: PropTypes.number,
-    currentPage: PropTypes.number,
+  pageContext: propShape({
+    numberOfPages: propNumber(),
+    currentPage: propNumber(),
   }).isRequired,
-  pathName: PropTypes.string.isRequired,
+  pathName: propString().isRequired,
 };
 
 export default Pagination;

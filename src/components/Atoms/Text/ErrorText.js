@@ -1,6 +1,6 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { propChildren } from '../../../helpers/propTypes';
 
 const Error = styled.p`
   color: red;
@@ -15,7 +15,7 @@ const ErrorText = ({ children }) => (
 );
 
 ErrorText.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: propChildren(),
 };
 
 export default ErrorText;

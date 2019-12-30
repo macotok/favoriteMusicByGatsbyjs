@@ -1,6 +1,6 @@
 import React from 'react';
-import * as PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
+import { propChildren } from '../../../helpers/propTypes';
 
 const Text = ({ children }) => (
   <Typography variant="body1" gutterBottom>
@@ -9,7 +9,7 @@ const Text = ({ children }) => (
 );
 
 Text.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: propChildren(),
 };
 
 export default Text;
