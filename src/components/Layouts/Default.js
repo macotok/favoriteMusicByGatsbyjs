@@ -10,6 +10,7 @@ import theme from '../../styled/theme';
 import Footer from '../Atoms/Text/Footer';
 import Header from '../Organisms/Header';
 import DefaultStyled from './DefaultStyled';
+import { propChildren, propString } from '../../helpers/propTypes';
 
 const LayoutWrapper = styled.div`
   max-width: 1000px;
@@ -32,5 +33,10 @@ const Default = ({ children, pathname }) => (
     </MaterialThemeProvider>
   </StylesProvider>
 );
+
+Default.propTypes = {
+  children: propChildren(),
+  pathname: propString().isRequired,
+};
 
 export default Default

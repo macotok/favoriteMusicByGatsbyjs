@@ -15,7 +15,7 @@ const Footer = () => (
   <FooterWrap>
     <footer>
       <FooterText>
-        puko.xyz
+        pukos-music-story.netlify.com
       </FooterText>
     </footer>
   </FooterWrap>

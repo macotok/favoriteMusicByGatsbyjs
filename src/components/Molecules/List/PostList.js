@@ -5,6 +5,7 @@ import { Divider } from '@material-ui/core';
 import TitleH2 from '../../Atoms/Title/TitleH2';
 import ButtonPrimary from '../../Atoms/Button/ButtonPrimary';
 import ArticleText from '../../Atoms/Text/ArticleText';
+import { propBool, propShape } from '../../../helpers/propTypes';
 
 const LinkText = styled(Link)`
   color: white;
@@ -25,5 +26,14 @@ const PostList = ({ post, isLastChild }) => (
     {isLastChild ? null : (<Divider variant="middle" component="div" style={{ marginBottom: '2rem' }} />)}
   </>
 );
+
+PostList.propTypes = {
+  post: propShape(),
+  isLastChild: propBool,
+};
+
+PostList.defaultProps = {
+  isLastChild: false,
+};
 
 export default PostList;

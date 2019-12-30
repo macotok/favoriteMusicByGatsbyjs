@@ -3,7 +3,16 @@ import { Provider } from "react-redux"
 import { createStore } from "redux"
 import { composeWithDevTools } from "redux-devtools-extension"
 import rootReducer from "../reducers"
+import { propElement } from '../helpers/propTypes';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
-export default ({ element }) => <Provider store={store}>{element}</Provider>
+const ReduxWrapper =  ({ element }) => (
+  <Provider store={store}>{element}</Provider>
+);
+
+ReduxWrapper.propTypes = {
+  element: propElement()
+};
+
+export default ReduxWrapper;

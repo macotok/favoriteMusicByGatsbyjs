@@ -1,23 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
 import SiteInfo from '../Molecules/SiteInfo';
 import HeaderNav from '../Molecules/List/HeaderNav';
-
-const HeaderWrapper = styled.header`
-  display: flex;
-  align-items: center;
-  background-color: ${props => props.theme.palette.primary.main};
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-`;
-
-const HeaderInner = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  width: 1000px;
-  height: 100%;
-`;
+import { HeaderWrapper, HeaderInner } from './HeaderStyled';
+import { propString } from '../../helpers/propTypes';
 
 const Header = ({ pathname }) => (
   <HeaderWrapper>
@@ -27,6 +12,10 @@ const Header = ({ pathname }) => (
     </HeaderInner>
   </HeaderWrapper>
 );
+
+Header.propTypes = {
+  pathname: propString().isRequired,
+};
 
 export default Header;
 

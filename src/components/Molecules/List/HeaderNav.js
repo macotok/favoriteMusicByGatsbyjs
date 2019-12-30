@@ -1,26 +1,7 @@
 import React from 'react';
-import { graphql, StaticQuery, Link } from 'gatsby';
-import styled, { css } from 'styled-components';
-import LinkAnimation from '../../../styled/Common';
-
-const NavList = styled.ul`
-  display: flex;
-`;
-
-const NavItem = styled.li`
-  padding: 8px 16px;
-`;
-
-const ManuItem = styled(Link)`
-  color: white;
-  display: block;
-  ${props => props.current ? css`
-    border-bottom: 1px solid white;
-    text-decoration: none;
-  ` : css`
-    ${LinkAnimation}
-  `}
-`;
+import { graphql, StaticQuery } from 'gatsby';
+import { NavList, NavItem, MenuItem } from './HeaderNavStyled';
+import { propShape, propString } from '../../../helpers/propTypes';
 
 const HeaderNav = ({ pathname }) => (
   <StaticQuery query={graphql`
@@ -50,13 +31,13 @@ const HeaderNav = ({ pathname }) => (
           }
           return (
             <NavItem key={index}>
-              <ManuItem
+              <MenuItem
                 to={item.url}
                 key={item.title}
                 current={isCurrentPage ? 1 : 0}
               >
                 {item.title}
-              </ManuItem>
+              </MenuItem>
             </NavItem>
           );
         })};
@@ -64,6 +45,11 @@ const HeaderNav = ({ pathname }) => (
     </nav>
   )}/>
 );
+
+HeaderNav.propTypes = {
+  pathname: propString().isRequired,
+  allWordpressWpApiMenusMenusItems: propShape(),
+};
 
 export default HeaderNav;
 

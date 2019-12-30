@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layouts/Default';
 import Pagination from '../components/Atoms/Pagination/Pagination';
 import PostList from '../components/Molecules/List/PostList';
+import { propArray, propShape, propString } from '../helpers/propTypes';
 
 const PaginationWrap = styled.div`
   display: flex;
@@ -21,5 +22,14 @@ const favoritePostList = ({ pageContext, location: { pathname } }) => (
     </PaginationWrap>
   </Layout>
 );
+
+favoritePostList.propTypes = {
+  pageContext: propShape({
+    posts: propArray(),
+  }),
+  location: propShape({
+    pathname: propString(),
+  })
+};
 
 export default favoritePostList;

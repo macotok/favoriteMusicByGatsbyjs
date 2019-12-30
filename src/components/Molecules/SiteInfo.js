@@ -1,24 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
 import MusicNoteOutlinedIcon from '@material-ui/icons/MusicNoteOutlined';
-
-const SiteInfoWrapper = styled.div`
-  flex-grow: 1;
-  color: white;
-  margin: auto 0;
-`;
-
-const SiteTitle = styled.h1`
-  font-weight: bold;
-  font-size: 1.2rem;
-  line-height: 1.4;
-  margin-bottom: .2rem;
-`;
-
-const SiteDescription = styled.p`
-  font-size: .8rem;
-`
+import { SiteInfoWrapper, SiteTitle, SiteDescription } from './SiteInfoStyled';
+import { propShape } from '../../helpers/propTypes';
 
 const SiteInfo = () => (
   <StaticQuery query={graphql`
@@ -44,5 +28,9 @@ const SiteInfo = () => (
     </SiteInfoWrapper>
   )} />
 );
+
+SiteInfo.propTypes = {
+  allWordpressSiteMetadata: propShape(),
+};
 
 export default SiteInfo;

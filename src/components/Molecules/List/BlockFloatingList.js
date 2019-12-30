@@ -1,29 +1,8 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
 import TitleH4 from '../../Atoms/Title/TitleH4';
-
-const BlockListWrap = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
-const BlockListItem = styled.div`
-  width: 300px;
-  border: 1px solid #efefef;
-  margin: 16px;
-  padding: 16px;
-`;
-
-const BlockListImage = styled.img`
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-`;
-
-const BlockList = styled.div`
-  text-align: center;
-`;
+import { BlockListWrap, BlockListItem, BlockList, BlockListImage} from './BlockFloatingListSatyled';
+import { propShape } from '../../../helpers/propTypes';
 
 const BlockFloatingList = () => (
   <StaticQuery query={graphql`
@@ -57,5 +36,9 @@ const BlockFloatingList = () => (
     )}
   />
 );
+
+BlockFloatingList.propTypes = {
+  allWordpressWpKeymusician: propShape(),
+};
 
 export default BlockFloatingList;

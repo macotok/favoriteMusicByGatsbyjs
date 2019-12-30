@@ -8,3 +8,4 @@
 - Styled-Components
 - Material-UI
 - Netlify
+- ESLint

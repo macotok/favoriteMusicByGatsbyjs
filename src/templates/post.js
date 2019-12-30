@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
 import ArticleText from '../components/Atoms/Text/ArticleText';
+import { propElement, propShape, propString } from '../helpers/propTypes';
 
 const TitleWrap = styled.div`
   display: flex;
@@ -22,5 +23,18 @@ const post = ({ pageContext,  location: { pathname } }) => (
     <ArticleText text={pageContext.content} />
   </Layout>
 );
+
+post.propTypes = {
+  pageContext: propShape({
+    title: propString(),
+    acf: propShape({
+      recommend: propString(),
+    }),
+    content: propElement(),
+  }),
+  location: propShape({
+    pathname: propString(),
+  })
+};
 
 export default post;

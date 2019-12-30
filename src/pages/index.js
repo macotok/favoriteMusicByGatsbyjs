@@ -3,6 +3,7 @@ import Layout from '../components/Layouts/Default';
 import Text from '../components/Atoms/Text/Text';
 import topText from '../text/top';
 import BlockList from '../components/Molecules/List/BlockList';
+import { propShape, propString } from '../helpers/propTypes';
 
 const Home = ({ location: { pathname } }) => (
   <Layout pathname={pathname}>
@@ -17,6 +18,12 @@ const Home = ({ location: { pathname } }) => (
     }
   </Layout>
 );
+
+Home.propTypes = {
+  location: propShape({
+    pathname: propString(),
+  })
+};
 
 export default Home;
 

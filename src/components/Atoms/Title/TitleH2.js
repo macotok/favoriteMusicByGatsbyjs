@@ -1,6 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import TitleIcon from '@material-ui/icons/Title';
+import { propChildren } from '../../../helpers/propTypes';
 
 const TitleH2 = ({ children }) => (
   <Typography
@@ -12,5 +13,9 @@ const TitleH2 = ({ children }) => (
     {children}
   </Typography>
 );
+
+TitleH2.propTypes = {
+  children: propChildren(),
+};
 
 export default TitleH2;
