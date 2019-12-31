@@ -5,7 +5,7 @@ import { Divider } from '@material-ui/core';
 import TitleH2 from '../../Atoms/Title/TitleH2';
 import ButtonPrimary from '../../Atoms/Button/ButtonPrimary';
 import ArticleText from '../../Atoms/Text/ArticleText';
-import { propBool, propShape } from '../../../helpers/propTypes';
+import { propBool, propOneOfType, propShape } from '../../../helpers/propTypes';
 
 const LinkText = styled(Link)`
   color: white;
@@ -19,7 +19,7 @@ const PostList = ({ post, isLastChild }) => (
     </TitleH2>
     <ArticleText text={post.node.excerpt} />
     <ButtonPrimary>
-      <LinkText to={`favorite/${post.node.wordpress_id}`}>
+      <LinkText to={`/favorite/${post.node.wordpress_id}`}>
         Read More...
       </LinkText>
     </ButtonPrimary>
@@ -29,7 +29,9 @@ const PostList = ({ post, isLastChild }) => (
 
 PostList.propTypes = {
   post: propShape(),
-  isLastChild: propBool,
+  isLastChild: propOneOfType([
+    propBool(),
+  ]),
 };
 
 PostList.defaultProps = {

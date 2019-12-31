@@ -1,6 +1,6 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import { propChildren, propElement } from '../../../helpers/propTypes';
+import { propElement, propString } from '../../../helpers/propTypes';
 
 const TitleH3 = ({ children, icon }) => (
   <Typography
@@ -14,7 +14,7 @@ const TitleH3 = ({ children, icon }) => (
 );
 
 TitleH3.propTypes = {
-  children: propChildren(),
+  children: propString(),
   icon: propElement(),
 };
 

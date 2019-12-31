@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { propChildren } from '../../../helpers/propTypes';
+import { propString } from '../../../helpers/propTypes';
 
 const Error = styled.p`
   color: red;
@@ -15,7 +15,7 @@ const ErrorText = ({ children }) => (
 );
 
 ErrorText.propTypes = {
-  children: propChildren(),
+  children: propString(),
 };
 
 export default ErrorText;

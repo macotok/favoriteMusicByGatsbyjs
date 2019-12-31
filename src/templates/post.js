@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Layout from '../components/Layouts/Default';
 import TitleH2 from '../components/Atoms/Title/TitleH2';
 import ArticleText from '../components/Atoms/Text/ArticleText';
-import { propElement, propShape, propString } from '../helpers/propTypes';
+import { propShape, propString } from '../helpers/propTypes';
 
 const TitleWrap = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ post.propTypes = {
     acf: propShape({
       recommend: propString(),
     }),
-    content: propElement(),
+    content: propString(),
   }),
   location: propShape({
     pathname: propString(),

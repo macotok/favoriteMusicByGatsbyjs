@@ -6,7 +6,7 @@ import TitleH2 from '../components/Atoms/Title/TitleH2';
 import TitleH3 from '../components/Atoms/Title/TitleH3';
 import ArticleText from '../components/Atoms/Text/ArticleText';
 import BlockFloatingList from '../components/Molecules/List/BlockFloatingList';
-import { propElement, propShape, propString } from '../helpers/propTypes';
+import { propShape, propString } from '../helpers/propTypes';
 
 const historyUnderContent = ({ pageContext, location: { pathname } }) => (
   <Layout pathname={pathname}>
@@ -27,7 +27,7 @@ const historyUnderContent = ({ pageContext, location: { pathname } }) => (
 historyUnderContent.propTypes = {
   pageContext: propShape({
     title: propString(),
-    content: propElement(),
+    content: propString(),
   }),
   location: propShape({
     pathname: propString(),

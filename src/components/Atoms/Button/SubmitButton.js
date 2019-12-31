@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@material-ui/core';
-import { propBool, propChildren, propShape } from '../../../helpers/propTypes';
+import { propBool, propShape, propString } from '../../../helpers/propTypes';
 
 const SubmitButton = ({ children, disabledProps }) => {
   const { pristine, submitting, invalid } = disabledProps;
@@ -17,7 +17,7 @@ const SubmitButton = ({ children, disabledProps }) => {
 };
 
 SubmitButton.propTypes = {
-  children: propChildren(),
+  children: propString().isRequired,
   disabledProps: propShape({
     pristine: propBool(),
     submitting: propBool(),
