@@ -25,8 +25,8 @@ const Contact = props => {
       </Typography>
       <Form
         name="contact"
-        method="post"
-        data-netlify={true}
+        method="POST"
+        data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
         <TextStyle>
