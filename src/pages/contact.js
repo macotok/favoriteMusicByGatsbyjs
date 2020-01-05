@@ -10,7 +10,7 @@ import CancelButton from '../components/Atoms/Button/CancelButton';
 import SubmitButton from '../components/Atoms/Button/SubmitButton';
 import { CONTACT_SELECT } from '../constants';
 import { required, minLength2, email} from '../validation';
-import { Form, TextStyle, TextAreaStyle, ButtonBlock } from './contactStyled';
+import { Form, TextStyle, TextAreaStyle, ButtonBlock } from '../styled/contactStyled';
 import { propBool, propFunc, propShape, propString } from '../helpers/propTypes';
 
 const Contact = props => {
