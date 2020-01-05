@@ -23,7 +23,6 @@ const Contact = props => {
       <Typography variant="body2" gutterBottom>
         取り上げて欲しいテーマやミュージシャン、または記事に関するお問い合わせはこちらになります。
       </Typography>
-      <input type="hidden" name="form-name" value="contact" />
       <Form
         name="contact"
         method="POST"
@@ -31,6 +30,7 @@ const Contact = props => {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="contact" />
         <TextStyle>
           <Field
             label="お名前"
