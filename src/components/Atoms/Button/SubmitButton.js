@@ -6,7 +6,7 @@ const SubmitButton = ({ children, disabledProps }) => {
   const { pristine, submitting, invalid } = disabledProps;
   return (
     <Button
-      type="submit"
+      type="button"
       disabled={pristine || submitting || invalid}
       variant="contained"
       color="primary"
