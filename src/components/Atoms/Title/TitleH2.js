@@ -9,7 +9,7 @@ const TitleH2 = ({ children }) => (
     component="h2"
     gutterBottom
   >
-    <TitleIcon style={{ position: 'relative', top: 5 }} />
+    <TitleIcon style={{ position: 'relative', top: 5, width: 25 }} />
     {children}
   </Typography>
 );

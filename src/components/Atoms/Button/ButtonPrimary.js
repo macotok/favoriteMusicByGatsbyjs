@@ -20,7 +20,7 @@ const ButtonPrimary = ({ children }) => (
     <ButtonStyle
       variant="contained"
       color="secondary"
-      endIcon={<ArrowForwardIosIcon />}
+      endIcon={<ArrowForwardIosIcon style={{ width: 20 }} />}
     >
       {children}
     </ButtonStyle>

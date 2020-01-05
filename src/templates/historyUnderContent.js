@@ -17,7 +17,7 @@ const historyUnderContent = ({ pageContext, location: { pathname } }) => (
       <ArticleText text={pageContext.content} />
     </Typography>
     <Divider variant="middle" component="div" style={{ margin: '1rem 0 2rem' }} />
-    <TitleH3 icon={<FaceIcon style={{ position: 'relative', top: 5, marginRight: 5 }} />}>
+    <TitleH3 icon={<FaceIcon style={{ position: 'relative', top: 5, marginRight: 5, width: 25 }} />}>
       影響を受けたミュージシャン
     </TitleH3>
     <BlockFloatingList />
