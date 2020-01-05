@@ -1,4 +1,4 @@
-const topText = [
+export const linkText = [
   {
     title: '音楽遍歴',
     content: 'どういった経緯で音楽を好きになってきたか。<br>初めて買ったCD。初めて衝撃を受けた楽曲などについて書きます。',
@@ -19,4 +19,9 @@ const topText = [
   }
 ];
 
-export default topText;
+export const aboutText = [
+  'Headless CMS(WordPress)のdataをGatsby.jsで構築',
+  'APIの規格をGraphQLとしてReactでViewを構築',
+  '静的ホスティングサービスはNetlifyを使用',
+  '作業リポジトリ「 <a href="https://github.com/macotok/favoriteMusicByGatsbyjs" target="_blank" rel="noopener noreferrer">macotok/favoriteMusicByGatsbyjs </a>」',
+];
