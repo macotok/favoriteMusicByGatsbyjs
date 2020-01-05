@@ -14,7 +14,7 @@ import { Form, TextStyle, TextAreaStyle, ButtonBlock } from '../styled/contactSt
 import { propBool, propFunc, propShape, propString } from '../helpers/propTypes';
 
 const Contact = props => {
-  const { handleSubmit, pristine, submitting, invalid, location: { pathname } } = props;
+  const { pristine, submitting, invalid, location: { pathname } } = props;
   return (
     <Layout pathname={pathname}>
       <TitleH2>
@@ -23,7 +23,12 @@ const Contact = props => {
       <Typography variant="body2" gutterBottom>
         取り上げて欲しいテーマやミュージシャン、または記事に関するお問い合わせはこちらになります。
       </Typography>
-      <Form onSubmit={handleSubmit}>
+      <Form
+        name="contact"
+        method="post"
+        data-netlify={true}
+        data-netlify-honeypot="bot-field"
+      >
         <TextStyle>
           <Field
             label="お名前"
